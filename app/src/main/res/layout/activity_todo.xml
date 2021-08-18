@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/wildSand"
+    tools:context=".TodoActivity">
+
+   <!-- <com.google.android.material.appbar.AppBarLayout
+         android:layout_width="match_parent"
+         android:layout_height="wrap_content"
+         android:theme="@style/Theme.Todoister.AppBarOverlay">
+
+         <androidx.appcompat.widget.Toolbar
+             android:id="@+id/toolbar"
+             android:layout_width="match_parent"
+             android:layout_height="?attr/actionBarSize"
+             android:background="?attr/colorPrimary"
+             app:popupTheme="@style/Theme.Todoister.PopupOverlay" />
+
+     </com.google.android.material.appbar.AppBarLayout>-->
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <Button
+        android:id="@+id/fab"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_margin="@dimen/fab_margin"
+        android:text="+ Add"
+        android:textAllCaps="false"
+        android:textSize="20sp"
+        android:background="@drawable/background"
+        android:textAlignment="center"
+        app:srcCompat="@android:drawable/ic_input_add"
+        tools:ignore="ContentDescription" />
+    <TextView
+        android:id="@+id/txtIntro"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="30sp"
+        android:text="Hey There!"
+        android:layout_marginTop="42dp"
+        android:layout_marginStart="30dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:fontFamily="@font/gadugi_bold"
+        android:textColor="@color/black"/>
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:elevation="10dp"
+        app:borderWidth="0dp"
+        app:rippleColor="@color/hintColor"
+        app:fabCustomSize="52dp"
+        android:id="@+id/fabNotes"
+        android:backgroundTint="@color/wildSand"
+        android:src="@drawable/notes_icon"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="38dp"
+        android:layout_marginEnd="30dp"
+        android:contentDescription="TodoActivity" />
+
+    <TextView
+        android:id="@+id/dateToday"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="88dp"
+        android:layout_marginStart="30dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:text="03 August, 2021"
+        android:textColor="@color/black"
+        android:textSize="15sp"
+        android:fontFamily="@font/gadugi_normal"/>
+
+    <TextView
+        android:id="@+id/Todoister"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="129dp"
+        android:layout_marginStart="30dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:text="Todoister"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        android:fontFamily="@font/gadugi_bold"/>
+
+ <!--   <SearchView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:searchIcon="@drawable/ic_search"
+        android:background="@drawable/search_background"
+        android:queryHint="Search Notes..."
+        android:queryBackground="@null"
+        android:layout_marginStart="30dp"
+        android:layout_marginEnd="30dp"
+        android:layout_marginTop="10dp"
+        android:elevation="10dp"
+        android:theme="@style/ThemeOverlay.search"
+        android:iconifiedByDefault="false"
+        app:layout_constraintTop_toBottomOf="@id/Todoister"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:id="@+id/search_view_todo"/>-->
+
+
+ <androidx.recyclerview.widget.RecyclerView
+     android:id="@+id/recycler_view"
+     android:layout_width="match_parent"
+     android:layout_height="wrap_content"
+     android:layout_marginTop="10dp"
+     android:padding="@dimen/recycler_padding"
+     app:layout_constraintTop_toBottomOf="@+id/Todoister"
+     android:visibility="visible"
+     tools:layout_editor_absoluteX="0dp"
+     tools:layout_editor_absoluteY="58dp">
+
+ </androidx.recyclerview.widget.RecyclerView>
+</androidx.constraintlayout.widget.ConstraintLayout>
+
+    <include layout="@layout/fragment_bottom_sheet" />
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
